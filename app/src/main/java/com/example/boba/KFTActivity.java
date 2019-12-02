@@ -15,8 +15,18 @@ public class KFTActivity extends AppCompatActivity {
         TextView drinkDisplay = findViewById(R.id.drinkDisplay);
 
         String[] yogurtDrinks = {"Yogurt Green Tea", "Yogurt Grapefruit Tea", "Yogurt Orange Tea"};
-        int yogurtLength = yogurtDrinks.length;
-        String selected = yogurtDrinks[getRandomNumberInRange(0,yogurtLength)];
+        String[] classicDrinks = {"Winter Melon Green Tea", "Honey Black Tea",
+        "Honey Green Tea", "Honey Oolong Tea", "Longan Jujube Tea", "KungFu Black Tea",
+        "KungFu Green Tea", "KungFu Oolong Tea", "KungFu Honey Tea", "Winter Melon Tea"};
+
+        int length = 0;
+        int drinkGroup = getRandomNumberInRange(0, 2);
+        if (drinkGroup == 0) {
+            length = yogurtDrinks.length;
+        } else if (drinkGroup == 1) {
+            length = classicDrinks.length;
+        }
+        String selected = yogurtDrinks[getRandomNumberInRange(0,length)];
         drinkDisplay.setText(selected);
     }
 
