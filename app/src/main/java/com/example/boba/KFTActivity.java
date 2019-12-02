@@ -20,13 +20,16 @@ public class KFTActivity extends AppCompatActivity {
         "KungFu Green Tea", "KungFu Oolong Tea", "KungFu Honey Tea", "Winter Melon Tea"};
 
         int length = 0;
+        String selected = "";
         int drinkGroup = getRandomNumberInRange(0, 2);
         if (drinkGroup == 0) {
             length = yogurtDrinks.length;
+            selected = yogurtDrinks[getRandomNumberInRange(0,length)];
         } else if (drinkGroup == 1) {
             length = classicDrinks.length;
+            selected = classicDrinks[getRandomNumberInRange(0, length)];
         }
-        String selected = yogurtDrinks[getRandomNumberInRange(0,length)];
+
         drinkDisplay.setText(selected);
     }
 
