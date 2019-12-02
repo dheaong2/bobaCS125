@@ -30,4 +30,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randoText"
         app:layout_constraintVertical_bias="0.073" />
+
+    <Button
+        android:id="@+id/geneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Generate Again"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/drinkDisplay"
+        app:layout_constraintVertical_bias="0.852" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,10 @@ package com.example.boba;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class KFTActivity extends AppCompatActivity {
@@ -21,16 +24,26 @@ public class KFTActivity extends AppCompatActivity {
 
         int length = 0;
         String selected = "";
-        int drinkGroup = getRandomNumberInRange(0, 2);
+        int drinkGroup = getRandomNumberInRange(0, 1);
         if (drinkGroup == 0) {
             length = yogurtDrinks.length;
-            selected = yogurtDrinks[getRandomNumberInRange(0,length)];
+            selected = yogurtDrinks[getRandomNumberInRange(0, length)];
         } else if (drinkGroup == 1) {
             length = classicDrinks.length;
             selected = classicDrinks[getRandomNumberInRange(0, length)];
         }
 
         drinkDisplay.setText(selected);
+
+        Button geneButton = findViewById(R.id.geneButton);
+
+        final Intent kftIntent = new Intent(this, KFTActivity.class);
+        geneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                startActivity(kftIntent);
+            }
+        });
     }
 
     private static int getRandomNumberInRange(int min, int max) {
